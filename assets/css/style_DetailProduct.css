@@ -1,0 +1,543 @@
+
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  line-height: 1.5;
+  background-color: rgba(245, 245, 247, 1);
+}
+
+
+.container {
+  width: 100%;
+  max-width: 1680px;
+  margin: 0 auto;
+  padding-left: 120px;
+  padding-right: 120px;
+  box-sizing: border-box;
+  padding-bottom: 20px;
+}
+
+.book-detail {
+  display: flex;
+  gap: 30px;
+  align-items: flex-start;
+  background-color: #fff;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+  margin: 30px 0;
+}
+
+.book-detail img {
+  width: 300px;
+  border-radius: 5px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.book-info {
+  flex: 1;
+}
+
+.book-info h2 {
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+
+.price {
+  font-size: 22px;
+  font-weight: bold;
+  color: #00a85a;
+  margin: 10px 0;
+}
+
+
+.stock {
+  font-weight: 500;
+  margin-bottom: 10px;
+}
+
+.shipping {
+  font-weight: bold;
+  color: #000;
+  margin-bottom: 5px;
+}
+
+.shipping i {
+  margin-right: 6px;
+}
+
+.delivery {
+  font-size: 13px;
+  color: gray;
+  margin-bottom: 15px;
+}
+
+.details {
+  list-style: none;
+  padding: 0;
+  margin-bottom: 15px;
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+.desc {
+  font-size: 14px;
+  margin-bottom: 20px;
+}
+
+.buttons {
+  display: flex;
+  gap: 15px;
+}
+
+.buy-button {
+  background-color: #004d3f;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  font-weight: bold;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.add-button {
+  background-color: #d6f2e6;
+  color: #004d3f;
+  padding: 10px 20px;
+  border: none;
+  font-weight: bold;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+
+section h3 {
+  margin-top: 2rem;
+}
+
+
+
+.carousel-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  overflow: hidden;
+  position: relative;
+}
+
+/*Service*/
+/* Container bọc ngoài */
+.service-features {
+  display: flex;
+  justify-content: space-between; /* hoặc: space-evenly */
+  align-items: flex-start;         /* hoặc center nếu muốn căn giữa theo chiều dọc */
+  background-color: white;
+  padding: 30px 20px;
+  border-radius: 10px;
+  margin: 20px auto;
+  max-width: 1680px;
+  box-sizing: border-box;
+}
+
+.feature-item {
+  flex: 1;
+  text-align: left;   /* 🔁 nếu bạn muốn icon + text canh giữa */
+  padding: 0 20px;
+  color: #4a7a58;
+  box-sizing: border-box;
+}
+
+.feature-item i {
+  font-size: 32px;
+  margin-bottom: 10px;
+  display: block;
+}
+
+.feature-item h4 {
+  font-size: 16px;
+  margin: 10px 0 5px;
+  font-weight: 600;
+}
+
+.feature-item p {
+  font-size: 14px;
+  color: #333;
+}
+
+/*Products*/
+.book-list {
+  display: flex;
+  gap: 16px;
+  align-items: stretch;
+  flex-wrap: nowrap;        /* Không xuống dòng */
+  width: 100%;
+  justify-content: flex-start; /* Các card dàn đều */
+}
+
+.product-card {
+  width: 281.25px;
+  height: 100%;
+  padding-bottom: 24px;
+  background: white;
+  overflow: hidden;
+  border-radius: 12px;
+  outline: 0.50px #D1D5DB solid;
+  outline-offset: -0.50px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 10px;
+  transition: all 0.3s ease;
+}
+
+.product-card:hover {
+  box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+  transform: translateY(-5px);
+}
+
+.product-image-container {
+  align-self: stretch;
+  padding: 24px;
+  overflow: hidden;
+  border-top-left-radius: 12px;
+  border-top-right-radius: 12px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.product-image {
+  width: 120px;
+  height: 182px;
+  object-fit: cover;
+}
+
+.product-info {
+  align-self: stretch;
+  padding: 0 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.product-title {
+  color: black;
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 28px;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  height: 56px;
+}
+
+.product-price {
+  color: #86A788;
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 28px;
+}
+
+.product-price-unit {
+  text-decoration: underline;
+}
+
+.product-sold {
+  color: #808080;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 24px;
+}
+
+.product-actions {
+  align-self: stretch;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.buy-button {
+  flex: 1;
+  padding: 16px;
+  background: #86A788;
+  border-radius: 10px;
+  color: white;
+  font-size: 13px;
+  font-weight: 600;
+  line-height: 20px;
+  text-align: center;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.buy-button:hover {
+  background: #75946E;
+}
+
+.cart-button {
+  width: 56px;
+  height: 56px;
+  padding: 5px;
+  background: rgba(75, 118, 57, 0.10);
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.cart-button:hover {
+  background: rgba(75, 118, 57, 0.2);
+}
+
+.cart-icon {
+  width: 32px;
+  height: 32px;
+  position: relative;
+}
+
+/* Modal và Notification */
+.modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 1000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-content {
+  background-color: #fff;
+  width: 90%;
+  max-width: 400px;
+  padding: 20px;
+  border-radius: 10px;
+  text-align: center;
+  position: relative;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.modal-header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 15px;
+}
+
+.modal-header i {
+  font-size: 24px;
+  margin-right: 10px;
+}
+
+.modal-body p {
+  font-size: 16px;
+  color: #333;
+  margin: 0;
+}
+
+.modal-footer {
+  margin-top: 20px;
+}
+
+.btn-confirm {
+  padding: 8px 20px;
+  background-color: #86A788;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: background-color 0.3s;
+}
+
+.btn-confirm:hover {
+  background-color: #59745a;
+}
+
+#cartNotificationModal {
+  z-index: 1001;
+}
+
+#cartNotificationText {
+  margin-top: 20px;
+  text-align: center;
+  color: #52c41a;
+  font-size: 16px;
+  transition: opacity 0.3s ease;
+}
+
+#cartNotificationText[style*="display: none"] {
+  opacity: 0;
+}
+
+.success-content {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  width: 300px;
+  text-align: center;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  animation: modalFadeIn 0.3s;
+}
+
+.success-content .modal-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 15px;
+  border: none;
+}
+
+.success-content .modal-header i {
+  font-size: 32px;
+}
+
+.success-content .modal-body {
+  background: none;
+  padding: 0;
+  color: #666;
+  font-size: 14px;
+}
+/*footer*/
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&display=swap');
+/* Footer */
+body { /* Thêm body để reset margin mặc định nếu cần */
+   margin: 0;
+   font-family: 'Montserrat', sans-serif; /* Đặt font chung ở đây nếu muốn */
+}
+
+
+
+  /* Responsive styles */
+  @media (max-width: 435px) {
+    .container {
+      padding-left: 16px;
+      padding-right: 16px;
+    }
+  
+    .book-detail {
+      flex-direction: column;
+      padding: 20px;
+    }
+  
+    .book-detail img {
+      width: 100%;
+      max-width: 300px;
+      margin: 0 auto;
+    }
+  
+    .book-info h2 {
+      font-size: 18px;
+    }
+  
+    .price {
+      font-size: 20px;
+    }
+  
+    .buttons {
+      flex-direction: column;
+    }
+  
+    .buy-button,
+    .add-button {
+      width: 100%;
+      font-size: 14px;
+      padding: 12px;
+    }
+  
+    .service-features {
+      flex-direction: column;
+      gap: 20px;
+      padding: 20px;
+      display: inline-block;
+      justify-content: space-between;
+      width: 100%;
+    }
+  
+    .feature-item {
+      text-align: center;
+      padding: 0;
+    }
+  
+    .book-list {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      padding-bottom: 10px;
+      justify-content: center; /* căn giữa theo chiều dọc nếu cần */
+      align-items: center;     /* căn giữa theo chiều ngang */
+    }
+    .carousel-wrapper{
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+    }
+    .product-card {
+      width: 220px;
+      padding-bottom: 16px;
+    }
+  
+    .product-title {
+      font-size: 16px;
+      line-height: 24px;
+      height: 48px;
+    }
+  
+    .product-price,
+    .product-sold {
+      font-size: 14px;
+    }
+  
+    .buy-button {
+      padding: 12px;
+      font-size: 12px;
+    }
+  
+    .cart-button {
+      width: 44px;
+      height: 44px;
+    }
+  
+    .cart-icon {
+      width: 24px;
+      height: 24px;
+    }
+  
+    .modal-content,
+    .success-content {
+      width: 90%;
+      padding: 16px;
+    }
+  
+    .modal-body p {
+      font-size: 14px;
+    }
+  
+    .btn-confirm {
+      font-size: 13px;
+      padding: 10px;
+    }
+  
+    #cartNotificationText {
+      font-size: 14px;
+      margin-top: 12px;
+    }
+  }
+  
+  

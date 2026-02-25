@@ -1,0 +1,345 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&display=swap');
+
+/* Body & Sidebar */
+body {
+    font-family: 'Montserrat', sans-serif;
+    background-color: #f8f9fa;
+    margin: 0;
+    display: flex;
+    flex-direction: row;
+    min-height: 100vh;
+}
+
+/* CSS cho sidebar - Tiệm Sách Nhà Em */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap');
+
+/* Các style chung cho sidebar sẽ được áp dụng khi không có style inline */
+
+/* Content */
+.content {
+    /* margin-left: 250px; */
+    padding: 30px;
+    flex: 1;
+    box-sizing: border-box;
+    position: relative;
+    z-index: 1;
+}
+
+/* Heading */
+h3 {
+    color: #2e2e2e;
+    font-weight: 700;
+    margin-bottom: 20px;
+}
+
+/* Table header customization */
+table.table thead.table-success {
+    background-color: #86A788 !important;
+    color: #fff !important;
+}
+
+table.table thead.table-success th {
+    background-color: #86A788 !important;
+    color: #fff !important;
+}
+
+/* Modal overrides */
+.modal-content {
+    border-radius: 10px;
+}
+
+/* Custom status badges */
+.status-pending { /* Đang xử lý */
+    background-color: #FFEB3B !important; /* Vàng nhạt */
+    color: #333 !important;
+}
+
+.status-delivered { /* Đã giao */
+    background-color: #86A788 !important; /* Xanh lá cố định */
+    color: #fff !important;
+}
+
+.status-shipping { /* Đang giao */
+    background-color: #BBDEFB !important; /* Xanh nhạt */
+    color: #333 !important;
+}
+
+.status-cancelled { /* Đã hủy */
+    background-color: #FFCDD2 !important; /* Hồng nhạt */
+    color: #333 !important;
+}
+
+.status-unresolved { /* Chưa giải quyết */
+    background-color: #FF9800 !important; /* Cam nhạt */
+    color: #fff !important;
+}
+
+/* Button outline primary */
+.btn-outline-primary {
+    border-color: #86A788 !important;
+    color: #86A788 !important;
+}
+
+.btn-outline-primary:hover {
+    background-color: #86A788 !important;
+    color: #fff !important;
+}
+
+/* Account info */
+.account-info {
+    font-size: 14px;
+    line-height: 1.3;
+}
+
+.profile-avatar {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    margin-bottom: 10px;
+}
+
+/* Success popup */
+.success-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 1050;
+    transition: opacity 0.3s ease;
+}
+
+.success-popup {
+    background-color: #fff;
+    border: 1px solid #86A788 !important;
+    border-radius: 10px;
+    padding: 20px;
+    width: 350px;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    font-family: 'Montserrat', sans-serif;
+}
+
+.popup-header h3 {
+    color: #86A788 !important;
+    font-size: 18px;
+    margin-bottom: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.checkmark {
+    margin-right: 8px;
+    color: #86A788 !important;
+}
+
+.popup-body p {
+    color: #333;
+    margin-bottom: 20px;
+    font-size: 14px;
+}
+
+.popup-footer {
+    display: flex;
+    justify-content: center;
+}
+
+.btn-success {
+    background-color: #AED9A3 !important;
+    color: #fff !important;
+    border: none;
+    padding: 8px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.btn-success:hover {
+    background-color: #86A788 !important;
+}
+
+/* Đảm bảo popup hiển thị khi cần */
+.success-overlay.active {
+    display: flex !important;
+}
+
+/* Responsive cho iPhone 14 Pro Max và các thiết bị nhỏ (dưới 430px) */
+@media (max-width: 430px) {
+    /* Ẩn sidebar và hiện nút hamburger */
+
+    /* Điều chỉnh content */
+    .content {
+        margin-left: 0; /* Bỏ margin-left để content chiếm toàn bộ chiều rộng */
+        padding: 15px; /* Giảm padding cho vừa màn hình nhỏ */
+    }
+
+    /* Tối ưu bảng */
+    .table {
+        display: block;
+        overflow-x: auto; /* Cho phép cuộn ngang nếu bảng quá rộng */
+        white-space: nowrap;
+    }
+
+    .table thead, .table tbody, .table tr, .table th, .table td {
+        display: inline-block;
+        white-space: normal;
+    }
+
+    .table th, .table td {
+        min-width: 120px; /* Đảm bảo mỗi cột có chiều rộng tối thiểu */
+        padding: 8px; /* Giảm padding cho gọn */
+    }
+
+    /* Điều chỉnh modal */
+    .modal-dialog {
+        margin: 10px;
+        width: 100%;
+    }
+
+    .modal-content {
+        font-size: 14px;
+    }
+
+    /* Điều chỉnh nút trong bảng */
+    .btn-outline-primary {
+        padding: 5px 10px;
+        font-size: 12px;
+    }
+
+    /* Tối ưu popup */
+    .success-popup {
+        width: 90%;
+        padding: 15px;
+    }
+
+    /* Tăng kích thước chữ và nút để dễ chạm */
+    h3 {
+        font-size: 18px;
+    }
+
+    .btn-success, .logout-button {
+        padding: 10px;
+        font-size: 14px;
+    }
+}/* Nút hamburger chỉ hiện trên màn hình nhỏ */
+.hamburger {
+    display: none;
+}
+
+@media (max-width: 430px) {
+    .hamburger {
+        display: block; /* Hiện nút hamburger trên màn nhỏ */
+    }
+}
+
+/* CSS cho phần đang tải trong modal */
+.loading-text {
+  color: #6c757d;
+  font-style: italic;
+}
+
+/* CSS cho modal chi tiết đơn hàng */
+.modal {
+  display: none;
+}
+
+.modal.show {
+  display: block;
+}
+
+/* CSS cho badge status */
+.badge.status-pending {
+  background-color: #ffc107;
+  color: #212529;
+}
+
+.badge.status-shipping {
+  background-color: #17a2b8;
+  color: white;
+}
+
+.badge.status-delivered {
+  background-color: #28a745;
+  color: white;
+}
+
+.badge.status-cancelled {
+  background-color: #dc3545;
+  color: white;
+}
+
+.badge.status-unresolved {
+  background-color: #6c757d;
+  color: white;
+}
+
+/* CSS cho popup thành công */
+.success-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: none;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+
+.success-popup {
+  background-color: white;
+  border-radius: 8px;
+  width: 100%;
+  max-width: 400px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+  overflow: hidden;
+}
+
+.popup-header {
+  background-color: #28a745;
+  color: white;
+  padding: 15px 20px;
+}
+
+.popup-header h3 {
+  margin: 0;
+  font-size: 18px;
+  display: flex;
+  align-items: center;
+}
+
+.checkmark {
+  background-color: white;
+  color: #28a745;
+  border-radius: 50%;
+  width: 24px;
+  height: 24px;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  margin-right: 10px;
+  font-size: 14px;
+}
+
+.popup-body {
+  padding: 20px;
+  color: #333;
+}
+
+.popup-footer {
+  padding: 10px 20px 20px;
+  text-align: center;
+}
+
+/* CSS cho khung hiển thị modal */
+@media (min-width: 768px) {
+  .modal-dialog.modal-lg {
+    max-width: 800px;
+  }
+}

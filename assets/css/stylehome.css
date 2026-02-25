@@ -1,0 +1,965 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&display=swap');
+
+* body {
+    font-family: 'Montserrat', sans-serif;
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+    background-color: rgba(245, 245, 247, 1);
+  }
+
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    margin-bottom: 12px;
+  }
+
+.banner-container {
+  width: 100%;
+  margin-bottom: 12px;
+  margin-top: 20px;
+}
+
+.banner-image {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+
+  section.book-banners {
+      width: 100%;
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      gap: 30px;
+      margin-top: 15px;
+    }
+
+    .banner-item img {
+      width: 100%;
+      max-width: 524px;
+      border-radius: 12px;
+      box-shadow: 0 6px 12px rgba(0,0,0,0.1);
+      transition: transform 0.3s ease;
+    }
+
+    .banner-item img:hover {
+      transform: scale(1.05);
+    }
+
+    section.book-banners2 {
+      width: 100%;
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      gap: 1rem;
+      margin-top: 25px;
+    }
+
+    .banner-item2 img {
+      width: 300px;
+      height: 400px;
+      object-fit: cover;
+      box-shadow: 0 6px 12px rgba(0,0,0,0.1);
+      transition: transform 0.3s ease;
+    }
+
+    .banner-item2 img:hover {
+      transform: scale(1.05);
+    }
+
+  .logo-section {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 6px;
+    justify-content: center; /* canh giữa theo chiều ngang */
+  }
+  
+  .logo-section img {
+    height: 60px;
+  }
+  
+  .main-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+    padding: 10px 0;
+    background-color: #f5f5f7;
+    flex-wrap: wrap; /* Để tránh vỡ layout khi thu nhỏ */
+  }
+  
+  .nav-links {
+    display: flex;
+    gap: 20px;
+    flex-shrink: 0;
+  }
+  
+  .nav-links a {
+    text-decoration: none;
+    color: #333;
+    font-weight: 500;
+  }
+  
+  .search-bar {
+    flex-grow: 1;
+    max-width: 400px;
+  }
+  
+  .search-bar input {
+    width: 100%;
+    padding: 8px 16px;
+    border-radius: 20px;
+    border: 1px solid #ccc;
+    font-size: 14px;
+  }
+  
+  .icons {
+    display: flex;
+    gap: 15px;
+    flex-shrink: 0;
+    font-size: 18px;
+  }
+  
+  .book-info {
+    flex: 1;
+  }
+  
+  .book-info h2 {
+    font-size: 20px;
+    margin-bottom: 10px;
+  }
+  
+  .price {
+    font-size: 22px;
+    font-weight: bold;
+    color: #00a85a;
+    margin: 10px 0;
+  }
+  
+  .rating {
+    color: #555;
+    font-size: 14px;
+    margin-bottom: 10px;
+  }
+  
+  .rating .star {
+    color: gold;
+    font-size: 18px;
+    margin-right: 4px;
+  }
+  
+  .stock {
+    font-weight: 500;
+    margin-bottom: 10px;
+  }
+  
+  .shipping {
+    font-weight: bold;
+    color: #000;
+    margin-bottom: 5px;
+  }
+  
+  .shipping i {
+    margin-right: 6px;
+  }
+  
+  .delivery {
+    font-size: 13px;
+    color: gray;
+    margin-bottom: 15px;
+  }
+  
+  .details {
+    list-style: none;
+    padding: 0;
+    margin-bottom: 15px;
+    font-size: 14px;
+    line-height: 1.6;
+  }
+  
+  .desc {
+    font-size: 14px;
+    margin-bottom: 20px;
+  }
+  
+  .buttons {
+    display: flex;
+    gap: 15px;
+  }
+  
+  .buy-button {
+    background-color: #004d3f;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    font-weight: bold;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .add-button {
+    background-color: #d6f2e6;
+    color: #004d3f;
+    padding: 10px 20px;
+    border: none;
+    font-weight: bold;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  
+  section h3 {
+    margin-top: 2rem;
+  }
+  .carousel-wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+    padding: 0 20px;
+  }
+
+  .carousel-wrapper {
+    position: relative;
+  }
+  
+  .carousel-btn {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: #e6ebe9; /* nền xám nhạt */
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #4a7a58; /* màu xanh lá */
+    font-size: 18px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .carousel-btn:hover {
+    background-color: #d7e0dc; /* hiệu ứng hover */
+  }
+
+  
+  .book-list {
+    display: flex;
+    gap: 1rem;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    flex-grow: 1;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+    scroll-snap-type: x mandatory;
+    -webkit-scroll-snap-type: x mandatory;
+  }
+  
+  .book-list::-webkit-scrollbar {
+    display: none;
+  }
+  
+  .book-list > .product-card {
+    scroll-snap-align: start;
+    flex-shrink: 0;
+    width: 281.25px;
+  }
+  
+  
+  .service-features {
+    display: flex;
+    justify-content: space-between;
+    background-color: #f7f8fa;
+    padding: 30px 20px;
+    border-radius: 10px;
+    margin: 20px auto;
+    width: 100%;
+  }
+  
+  .feature-item {
+    flex: 1;
+    text-align: left;
+    padding: 0 10px;
+    color: #4a7a58;
+  }
+  
+  .feature-item i {
+    font-size: 32px;
+    margin-bottom: 10px;
+  }
+  
+  .feature-item h4 {
+    font-size: 16px;
+    margin: 10px 0 5px;
+    font-weight: 600;
+  }
+  
+  .feature-item p {
+    font-size: 14px;
+    color: #333;
+  }
+
+  /* Styles for product cards on home page */
+  .product-card {
+    width: 281.25px;
+    height: 100%;
+    padding-bottom: 24px;
+    background: white;
+    overflow: hidden;
+    border-radius: 12px;
+    outline: 0.50px #D1D5DB solid;
+    outline-offset: -0.50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 10px;
+    transition: all 0.3s ease;
+  }
+
+  .product-card:hover {
+    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+    transform: translateY(-5px);
+  }
+
+  .product-image-container {
+    align-self: stretch;
+    padding: 24px;
+    overflow: hidden;
+    border-top-left-radius: 12px;
+    border-top-right-radius: 12px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .product-image {
+    width: 120px;
+    height: 182px;
+    object-fit: cover;
+  }
+
+  .product-info {
+    align-self: stretch;
+    padding: 0 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .product-title {
+    color: black;
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 28px;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    height: 56px;
+  }
+
+  .product-price {
+    color: #86A788;
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 28px;
+  }
+
+  .product-price-unit {
+    text-decoration: underline;
+  }
+
+  .product-sold {
+    color: #808080;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 24px;
+  }
+
+  .product-actions {
+    align-self: stretch;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .buy-button {
+    flex: 1;
+    padding: 16px;
+    background: #86A788;
+    border-radius: 10px;
+    color: white;
+    font-size: 13px;
+    font-weight: 600;
+    line-height: 20px;
+    text-align: center;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.2s;
+  }
+
+  .buy-button:hover {
+    background: #75946E;
+  }
+
+  .cart-button {
+    width: 56px;
+    height: 56px;
+    padding: 5px;
+    background: rgba(75, 118, 57, 0.10);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.2s;
+  }
+
+  .cart-button:hover {
+    background: rgba(75, 118, 57, 0.2);
+  }
+
+  .cart-icon {
+    width: 32px;
+    height: 32px;
+    position: relative;
+  }
+
+  .see-all-btn {
+    background-color: #88a58a;
+    color: white;
+    padding: 8px 16px;
+    border: none;
+    border-radius: 8px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    font-family: 'Montserrat', sans-serif;
+    
+  }
+  
+  .see-all-btn:hover {
+    background-color: #729775;
+  }
+
+/* Footer */
+footer {
+    margin: 0;
+    padding: 1rem 0;
+    background-color: #033;
+    color: white;
+    text-align: left;
+}
+
+.site-footer {
+    background-color: #1e2b23;
+    color: white;
+    padding: 40px 0 20px;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 30px;
+    flex-wrap: wrap;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.footer-logo-info {
+    display: flex;
+    flex-direction: row; /* Đảm bảo logo và text nằm ngang hàng */
+    align-items: flex-start; /* Căn lên trên cùng */
+    max-width: 400px;
+    padding-left: 0;
+}
+
+.footer-logo-info img {
+    width: 190px;
+    height: 190px;
+    flex-shrink: 0;
+    object-fit: contain;
+    margin-right: 16px; /* Thêm khoảng cách giữa logo và text */
+}
+
+.footer-description {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    margin-top: 0; /* Đảm bảo không có khoảng cách trên để căn sát đỉnh */
+}
+
+.footer-description h4 {
+    margin-bottom: 10px;
+    margin-top: 16px; /* Bỏ khoảng cách trên để căn sát đỉnh */
+    font-size: 30px;
+    color: #fff;
+}
+
+.footer-description p {
+    font-size: 12px;
+    width: 200px;
+    color: #ccc;
+    line-height: 1.5;
+    margin: 0; /* Bỏ margin để không bị lệch */
+}
+
+.footer-block h4 {
+    font-size: 14px;
+    margin-bottom: 10px;
+    width: 200px;
+    color: #ffffff;
+}
+
+.footer-right-blocks {
+    display: flex;
+    gap: 15px;
+    flex: 2;
+    justify-content: flex-end;
+    line-height: 1.6;
+    flex-wrap: wrap;
+}
+
+.footer-block p {
+    font-size: 13px;
+    margin: 6px 0;
+    color: #ccc;
+}
+
+.footer-block i {
+    margin-right: 8px;
+    color: #ffffff;
+    line-height: 2.4;
+}
+
+.footer-bottom {
+    border-top: 1px solid #4a5d50;
+    margin-top: 30px;
+    padding-top: 10px;
+    text-align: center;
+    font-size: 12px;
+    color: #bbb;
+}
+
+
+
+  /* Responsive styles 
+  @media screen and (max-width: 768px) {
+    .book-detail {
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+    }
+  
+    .book-detail img {
+      width: 60%;
+    }
+  
+    .book-info {
+      padding: 0 1rem;
+    }
+  
+    .book-list {
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+  }
+
+    .section-title {
+      font-size: 24px;
+      font-weight: bold;
+      margin-bottom: 12px;
+      background-color: #729775;
+    }
+
+    /*HÀNG NÚT ĐIỀU KHIỂN + XEM TẤT CẢ 
+    .control-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 16px;
+    }
+
+    .left-controls {
+      display: flex;
+      gap: 10px;
+    }
+
+    .left-controls button {
+      padding: 8px 14px;
+      font-size: 16px;
+      background-color: #34a853;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+
+    .right-controls .see-all-btn {
+      padding: 8px 14px;
+      background-color: #eee;
+      color: #333;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+
+    .see-all-btn:hover {
+      background-color: #ccc;
+    }
+    /* 2 HÀNG SÁCH CUỘN NGANG 
+    .carousel-container {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+.control-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 1rem 0;
+}
+
+.left-controls button {
+  width: 36px;
+  height: 36px;
+  margin-right: 8px;
+  border: none;
+  background-color: #eef3ec;
+  color: #4a6d5a;
+  border-radius: 50%;
+  font-size: 14px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.left-controls button:hover {
+  background-color: #dbe6db;
+}
+
+.see-all-btn {
+  background-color: #88a58a;
+  color: white;
+  padding: 8px 16px;
+  border: none;
+  border-radius: 8px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.see-all-btn:hover {
+  background-color: #729775;
+}
+
+.right-carousel-btn {
+  width: 36px;
+  height: 36px;
+  border: none;
+  background-color: #eef3ec;
+  color: #4a6d5a;
+  border-radius: 50%;
+  font-size: 14px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.right-carousel-btn:hover {
+  background-color: #dbe6db;
+}
+
+/* Style for the header of popular books section 
+.popular-books-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px; /* Add some space below the header 
+}*/
+/* Existing styles remain, adding responsive adjustments */
+
+/* Existing styles remain, adding horizontal scroll for mobile */
+
+section.book-banners, section.book-banners2 {
+  width: 100%;
+  margin: 20px 0;
+}
+
+/* Mobile (up to 768px) */
+@media (max-width: 768px) {
+  .container {
+    padding: 0 10px;
+  }
+
+  .banner-container .banner-image {
+    height: 200px;
+    object-fit: cover;
+  }
+
+  /* Horizontal scrolling for book-banners */
+  .book-banners {
+    display: flex;
+    flex-direction: row;
+    overflow-x: auto;
+    gap: 15px;
+    scroll-behavior: smooth;
+    scrollbar-width: none; /* Hide scrollbar for Firefox */
+    -ms-overflow-style: none; /* Hide scrollbar for IE/Edge */
+    scroll-snap-type: x mandatory;
+    -webkit-scroll-snap-type: x mandatory;
+  }
+
+  .book-banners::-webkit-scrollbar {
+    display: none; /* Hide scrollbar for Chrome/Safari */
+  }
+
+  .banner-item {
+    flex-shrink: 0;
+    width: 70%; /* Adjust width for mobile */
+    scroll-snap-align: start;
+  }
+
+  /* Hover effect for book-banners and book-banners2 images across all screen sizes */
+  .banner-item img, .banner-item2 img {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .banner-item img:hover, .banner-item2 img:hover {
+    transform: translateY(-5px) scale(1.05); /* Slightly lift and scale the image */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Add a shadow for depth */
+  }
+  
+  /* Horizontal scrolling for book-banners2 */
+  .book-banners2 {
+    display: flex;
+    flex-direction: row;
+    overflow-x: auto;
+    gap: 15px;
+    scroll-behavior: smooth;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+    scroll-snap-type: x mandatory;
+    -webkit-scroll-snap-type: x mandatory;
+  }
+
+  .book-banners2::-webkit-scrollbar {
+    display: none;
+  }
+
+
+  .carousel-wrapper {
+    padding: 0 10px;
+  }
+
+  .book-list {
+    gap: 10px;
+  }
+
+  .product-card {
+    width: 150px;
+    min-height: 250px;
+  }
+
+  .product-image {
+    width: 80px;
+    height: 120px;
+  }
+
+  .service-features {
+    flex-direction: column;
+    text-align: center;
+    padding: 20px 10px;
+  }
+
+  .feature-item {
+    margin-bottom: 20px;
+  }
+
+  .control-row {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .right-controls {
+    margin-top: 10px;
+  }
+  .see-all-btn {
+  background-color: #88a58a;
+  color: white;
+  padding: 8px 16px;
+  border: none;
+  border-radius: 8px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.see-all-btn:hover {
+  background-color: #729775;
+}
+}
+
+/* Tablet (769px - 1024px) */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .container {
+    padding: 0 15px;
+  }
+
+  .book-banners {
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+
+  .banner-item img {
+    max-width: 48%;
+  }
+
+  .book-banners2 {
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+
+  .banner-item2 img {
+    width: 45%;
+    height: auto;
+  }
+  .banner-item2 img:hover {
+    transform: scale(1.05);
+  }
+
+  .service-features {
+    flex-wrap: wrap;
+    padding: 20px;
+  }
+
+  .feature-item {
+    flex: 1 1 40%;
+    margin-bottom: 20px;
+  }
+  .see-all-btn {
+    background-color: #88a58a;
+    color: white;
+    padding: 8px 16px;
+    border: none;
+    border-radius: 8px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    font-family: 'Montserrat', sans-serif;
+  }
+  
+  .see-all-btn:hover {
+    background-color: #729775;
+  }
+}
+
+/* Desktop (1025px and above) - Enhance "wow" factor */
+@media (min-width: 1025px) {
+  .book-banners {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    gap: 30px;
+  }
+
+  .banner-item img {
+    width: 100%;
+    max-width: 524px;
+    border-radius: 12px;
+    box-shadow: 0 6px 12px rgba(0,0,0,0.1);
+    transition: transform 0.5s ease, box-shadow 0.3s ease;
+  }
+
+  .book-banners2 {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  .banner-item2 img {
+    width: 300px;
+    height: 400px;
+    object-fit: cover;
+    box-shadow: 0 6px 12px rgba(0,0,0,0.1);
+    transition: transform 0.5s ease, box-shadow 0.3s ease;
+  }
+
+  .banner-container .banner-image {
+    transition: transform 0.5s ease;
+  }
+
+  .book-banners .banner-item img:hover,
+  .book-banners2 .banner-item2 img:hover {
+    transform: scale(1.1);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
+  }
+
+  .product-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+  }
+
+  .carousel-btn {
+    opacity: 0.7;
+    transition: opacity 0.3s ease;
+  }
+
+  .carousel-wrapper:hover .carousel-btn {
+    opacity: 1;
+  }
+}
+
+/* General Enhancements */
+.book-banners, .book-banners2 {
+  margin: 20px 0;
+}
+
+.product-card {
+  transition: all 0.4s ease;
+}
+
+.buy-button, .add-button {
+  transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.buy-button:hover, .add-button:hover {
+  transform: scale(1.05);
+}
+
+.control-row {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.right-controls {
+  display: flex;
+  justify-content: space-between;
+  align-items: center; /* Canh giữa theo chiều dọc */
+  width: 100%; /* Bắt buộc để h3 và button nằm 2 bên */
+  padding-bottom: 15px;
+}
+.see-all-btn {
+  background-color: #88a58a;
+  color: white;
+  padding: 8px 16px;
+  border: none;
+  border-radius: 8px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  font-family: 'Montserrat', sans-serif;
+  
+}
+
+.see-all-btn:hover {
+  background-color: #729775;
+}
