@@ -1,49 +1,49 @@
 // Đóng mở dấu +/−
 function toggleBox(header) {
-  const icon = header.querySelector(".icon");
+  const icon = header.querySelector('.icon');
   const subContent = header.nextElementSibling;
 
-  icon.textContent = icon.textContent.trim() === "+" ? "−" : "+";
+  icon.textContent = icon.textContent.trim() === '+' ? '−' : '+';
   subContent.style.display =
-    subContent.style.display === "none" || !subContent.style.display
-      ? "block"
-      : "none";
+    subContent.style.display === 'none' || !subContent.style.display
+      ? 'block'
+      : 'none';
 }
 
 // Mở tất cả box khi load
-window.addEventListener("DOMContentLoaded", () => {
-  document.querySelectorAll(".sub-header").forEach((header) => {
-    const icon = header.querySelector(".icon");
+window.addEventListener('DOMContentLoaded', () => {
+  document.querySelectorAll('.sub-header').forEach((header) => {
+    const icon = header.querySelector('.icon');
     const subContent = header.nextElementSibling;
-    subContent.style.display = "block";
-    icon.textContent = "−";
+    subContent.style.display = 'block';
+    icon.textContent = '−';
   });
 });
 
-document.addEventListener("DOMContentLoaded", function () {
-  const tagsContainer = document.querySelector(".tags-container");
+document.addEventListener('DOMContentLoaded', function () {
+  const tagsContainer = document.querySelector('.tags-container');
   const checkboxes = document.querySelectorAll('input[type="checkbox"]');
-  const clearButton = document.querySelector(".delete-button");
-  const priceRange = document.getElementById("price-range");
+  const clearButton = document.querySelector('.delete-button');
+  const priceRange = document.getElementById('price-range');
   const maxPrice = parseInt(priceRange.max);
   let priceTag = null;
   let products = [];
   let filteredProducts = [];
   let searchKeyword = '';
-  
+
   // Kiểm tra xem có tham số tìm kiếm trong URL không
   const urlParams = new URLSearchParams(window.location.search);
   if (urlParams.has('search')) {
     searchKeyword = urlParams.get('search');
-    
+
     // Hiển thị keyword tìm kiếm như một tag
     if (searchKeyword) {
-      const searchTag = document.createElement("span");
-      searchTag.className = "filter-tag search-tag";
-      searchTag.setAttribute("data-type", "search");
+      const searchTag = document.createElement('span');
+      searchTag.className = 'filter-tag search-tag';
+      searchTag.setAttribute('data-type', 'search');
       searchTag.innerHTML = `Tìm kiếm: "${searchKeyword}" <span class="remove">×</span>`;
 
-      searchTag.querySelector(".remove").addEventListener("click", () => {
+      searchTag.querySelector('.remove').addEventListener('click', () => {
         searchTag.remove();
         searchKeyword = '';
         // Xóa tham số search từ URL mà không reload trang
@@ -76,27 +76,27 @@ document.addEventListener("DOMContentLoaded", function () {
     <div id="cartNotificationText" style="display: none;"></div>
   `;
   document
-    .querySelector("main")
-    .insertAdjacentHTML("beforeend", notificationHtml);
+    .querySelector('main')
+    .insertAdjacentHTML('beforeend', notificationHtml);
 
   // Hàm hiển thị modal thông báo
   function showNotificationModal(message) {
-    const modal = document.getElementById("cartNotificationModal");
-    const messageElement = document.getElementById("notificationMessage");
+    const modal = document.getElementById('cartNotificationModal');
+    const messageElement = document.getElementById('notificationMessage');
     messageElement.textContent = message;
-    modal.style.display = "flex";
+    modal.style.display = 'flex';
   }
 
   // Hàm đóng modal
   window.closeNotificationModal = function () {
-    const modal = document.getElementById("cartNotificationModal");
-    modal.style.display = "none";
+    const modal = document.getElementById('cartNotificationModal');
+    modal.style.display = 'none';
   };
 
   // Đóng modal khi nhấp bên ngoài
   document
-    .getElementById("cartNotificationModal")
-    .addEventListener("click", function (e) {
+    .getElementById('cartNotificationModal')
+    .addEventListener('click', function (e) {
       if (e.target === this) {
         closeNotificationModal();
       }
@@ -104,32 +104,32 @@ document.addEventListener("DOMContentLoaded", function () {
 
   // Đóng modal khi nhấp vào nút "Đóng"
   document
-    .getElementById("closeModalBtn")
-    .addEventListener("click", closeNotificationModal);
+    .getElementById('closeModalBtn')
+    .addEventListener('click', closeNotificationModal);
 
   // Hàm hiển thị thông báo text bên dưới danh sách sản phẩm
   function showCartNotificationText(message) {
-    const notificationText = document.getElementById("cartNotificationText");
+    const notificationText = document.getElementById('cartNotificationText');
     notificationText.textContent = `Sản phẩm đã được thêm vào giỏ hàng: ${message}`;
-    notificationText.style.display = "block";
+    notificationText.style.display = 'block';
     setTimeout(() => {
-      notificationText.style.display = "none";
+      notificationText.style.display = 'none';
     }, 5000);
   }
 
   function formatCurrency(value) {
-    return value.toLocaleString("vi-VN") + "đ";
+    return value.toLocaleString('vi-VN') + 'đ';
   }
 
   function createTag(label, value) {
     if (tagsContainer.querySelector(`[data-value="${value}"]`)) return;
 
-    const tag = document.createElement("span");
-    tag.className = "filter-tag";
-    tag.setAttribute("data-value", value);
+    const tag = document.createElement('span');
+    tag.className = 'filter-tag';
+    tag.setAttribute('data-value', value);
     tag.innerHTML = `${label} <span class="remove">×</span>`;
 
-    tag.querySelector(".remove").addEventListener("click", () => {
+    tag.querySelector('.remove').addEventListener('click', () => {
       tag.remove();
       const cb = document.querySelector(
         `input[type="checkbox"][value="${value}"]`
@@ -142,7 +142,7 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 
   checkboxes.forEach((cb) => {
-    cb.addEventListener("change", function () {
+    cb.addEventListener('change', function () {
       const value = this.value;
       const label = this.parentElement.textContent.trim();
 
@@ -155,18 +155,18 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   });
 
-  priceRange.addEventListener("input", () => {
+  priceRange.addEventListener('input', () => {
     const currentValue = parseInt(priceRange.value);
     if (priceTag) priceTag.remove();
 
     if (currentValue < maxPrice) {
       const formatted = formatCurrency(currentValue);
-      priceTag = document.createElement("span");
-      priceTag.className = "filter-tag";
-      priceTag.setAttribute("data-type", "price");
+      priceTag = document.createElement('span');
+      priceTag.className = 'filter-tag';
+      priceTag.setAttribute('data-type', 'price');
       priceTag.innerHTML = `0đ - ${formatted} <span class="remove">×</span>`;
 
-      priceTag.querySelector(".remove").addEventListener("click", () => {
+      priceTag.querySelector('.remove').addEventListener('click', () => {
         priceTag.remove();
         priceTag = null;
         priceRange.value = maxPrice;
@@ -177,9 +177,9 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   });
 
-  clearButton.addEventListener("click", () => {
+  clearButton.addEventListener('click', () => {
     tagsContainer
-      .querySelectorAll(".filter-tag")
+      .querySelectorAll('.filter-tag')
       .forEach((tag) => tag.remove());
     checkboxes.forEach((cb) => (cb.checked = false));
     priceRange.value = maxPrice;
@@ -187,19 +187,19 @@ document.addEventListener("DOMContentLoaded", function () {
       priceTag.remove();
       priceTag = null;
     }
-    
+
     // Xóa cả tham số tìm kiếm nếu có
     searchKeyword = '';
     const url = new URL(window.location);
     url.searchParams.delete('search');
     window.history.pushState({}, '', url);
-    
+
     applyFilters();
   });
 
   function renderProducts(list) {
-    const grid = document.getElementById("product-grid");
-    grid.innerHTML = "";
+    const grid = document.getElementById('product-grid');
+    grid.innerHTML = '';
 
     if (list.length === 0) {
       grid.innerHTML =
@@ -208,27 +208,33 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     list.forEach((p) => {
-      const card = document.createElement("div");
-      card.className = "product-card";
-      
+      const card = document.createElement('div');
+      card.className = 'product-card';
+
       // Hiển thị tên sản phẩm với highlight từ khóa tìm kiếm nếu có
       let bookTitle = p.bookTitle;
-      if (searchKeyword && bookTitle.toLowerCase().includes(searchKeyword.toLowerCase())) {
+      if (
+        searchKeyword &&
+        bookTitle.toLowerCase().includes(searchKeyword.toLowerCase())
+      ) {
         // Tạo regex với từ khóa tìm kiếm để thay thế không phân biệt hoa thường
         const regex = new RegExp(`(${searchKeyword})`, 'gi');
-        bookTitle = bookTitle.replace(regex, '<span class="search-highlight">$1</span>');
+        bookTitle = bookTitle.replace(
+          regex,
+          '<span class="search-highlight">$1</span>'
+        );
       }
-      
+
       card.innerHTML = `
         <div class="product-image-container">
           <img class="product-image" src="${
-            p.imageUrl || "https://placehold.co/120x182"
+            p.imageUrl || 'https://placehold.co/120x182'
           }" alt="${p.bookTitle}" data-id="${p._id}">
         </div>
         <div class="product-info">
           <div class="product-title">${bookTitle}</div>
           <div class="product-price">${
-            p.price?.toLocaleString("vi-VN") || "N/A"
+            p.price?.toLocaleString('vi-VN') || 'N/A'
           }<span class="product-price-unit">đ</span></div>
           <div class="product-sold">${p.soldCount || 0} đã bán/tháng</div>
           <div class="product-actions">
@@ -252,57 +258,57 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 
     // Thêm sự kiện cho hình ảnh sản phẩm (chuyển đến DetailProduct.html)
-    document.querySelectorAll(".product-image").forEach((image) => {
-      image.addEventListener("click", function () {
-        const productId = this.getAttribute("data-id");
+    document.querySelectorAll('.product-image').forEach((image) => {
+      image.addEventListener('click', function () {
+        const productId = this.getAttribute('data-id');
         window.location.href = `DetailProduct.html?id=${productId}`;
       });
     });
 
     // Thêm sự kiện cho các nút "Mua hàng"
-    document.querySelectorAll(".buy-button").forEach((button) => {
-      button.addEventListener("click", function () {
+    document.querySelectorAll('.buy-button').forEach((button) => {
+      button.addEventListener('click', function () {
         const product = {
-          id: this.getAttribute("data-id"),
-          bookTitle: this.getAttribute("data-title"),
-          price: parseInt(this.getAttribute("data-price")), // Đã ép kiểu
-          imageUrl: this.getAttribute("data-image"),
+          id: this.getAttribute('data-id'),
+          bookTitle: this.getAttribute('data-title'),
+          price: parseInt(this.getAttribute('data-price')), // Đã ép kiểu
+          imageUrl: this.getAttribute('data-image'),
           quantity: 1,
           checked: true,
         };
 
-        let cart = JSON.parse(localStorage.getItem("cart")) || [];
+        let cart = JSON.parse(localStorage.getItem('cart')) || [];
         const existingProduct = cart.find((item) => item.id === product.id);
         if (existingProduct) {
           existingProduct.quantity += 1;
         } else {
           cart.push(product);
         }
-        localStorage.setItem("cart", JSON.stringify(cart));
-        window.location.href = "cart.html";
+        localStorage.setItem('cart', JSON.stringify(cart));
+        window.location.href = 'cart.html';
       });
     });
 
     // Thêm sự kiện cho các nút "Thêm vào giỏ hàng"
-    document.querySelectorAll(".cart-button").forEach((button) => {
-      button.addEventListener("click", function () {
+    document.querySelectorAll('.cart-button').forEach((button) => {
+      button.addEventListener('click', function () {
         const product = {
-          id: this.getAttribute("data-id"),
-          bookTitle: this.getAttribute("data-title"),
-          price: parseInt(this.getAttribute("data-price")), // Đã ép kiểu
-          imageUrl: this.getAttribute("data-image"),
+          id: this.getAttribute('data-id'),
+          bookTitle: this.getAttribute('data-title'),
+          price: parseInt(this.getAttribute('data-price')), // Đã ép kiểu
+          imageUrl: this.getAttribute('data-image'),
           quantity: 1,
           checked: true,
         };
 
-        let cart = JSON.parse(localStorage.getItem("cart")) || [];
+        let cart = JSON.parse(localStorage.getItem('cart')) || [];
         const existingProduct = cart.find((item) => item.id === product.id);
         if (existingProduct) {
           existingProduct.quantity += 1;
         } else {
           cart.push(product);
         }
-        localStorage.setItem("cart", JSON.stringify(cart));
+        localStorage.setItem('cart', JSON.stringify(cart));
         showNotificationModal(
           `${product.bookTitle} đã được thêm vào giỏ hàng!`
         );
@@ -320,15 +326,18 @@ document.addEventListener("DOMContentLoaded", function () {
     const maxSelectedPrice = parseInt(priceRange.value);
 
     filteredProducts = products.filter((p) => {
-      const genre = p.catalog || "";
+      const genre = p.catalog || '';
       const price = p.price || 0;
 
       // Tìm kiếm theo từ khóa (nếu có)
-      const matchSearch = !searchKeyword || 
+      const matchSearch =
+        !searchKeyword ||
         p.bookTitle.toLowerCase().includes(searchKeyword.toLowerCase()) ||
-        (p.description && p.description.toLowerCase().includes(searchKeyword.toLowerCase())) ||
-        (p.author && p.author.toLowerCase().includes(searchKeyword.toLowerCase()));
-      
+        (p.description &&
+          p.description.toLowerCase().includes(searchKeyword.toLowerCase())) ||
+        (p.author &&
+          p.author.toLowerCase().includes(searchKeyword.toLowerCase()));
+
       const matchGenre =
         genreFilters.length === 0 || genreFilters.includes(genre);
       const matchPrice = price <= maxSelectedPrice;
@@ -341,23 +350,23 @@ document.addEventListener("DOMContentLoaded", function () {
 
   // Hàm áp dụng sắp xếp
   function applySort() {
-    const sortValue = document.getElementById("sort-select").value;
+    const sortValue = document.getElementById('sort-select').value;
     let sortedProducts = [...filteredProducts];
 
     switch (sortValue) {
-      case "popular":
+      case 'popular':
         sortedProducts.sort((a, b) => (b.soldCount || 0) - (a.soldCount || 0));
         break;
-      case "az":
+      case 'az':
         sortedProducts.sort((a, b) => a.bookTitle.localeCompare(b.bookTitle));
         break;
-      case "za":
+      case 'za':
         sortedProducts.sort((a, b) => b.bookTitle.localeCompare(b.bookTitle));
         break;
-      case "price-asc":
+      case 'price-asc':
         sortedProducts.sort((a, b) => (a.price || 0) - (b.price || 0));
         break;
-      case "price-desc":
+      case 'price-desc':
         sortedProducts.sort((a, b) => (b.price || 0) - (a.price || 0));
         break;
     }
@@ -366,55 +375,61 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 
   // Gọi API khi load trang
-  let apiUrl = "https://tiemsachnhaem-be-mu.vercel.app/api/products?page=1&limit=50";
-  
+  let apiUrl =
+    'https://timsachnhabe-be.vercel.app//api/products?page=1&limit=50';
+
   // Tải tất cả sản phẩm và sau đó lọc theo từ khóa nếu có
   fetch(apiUrl)
     .then((res) => res.json())
     .then((data) => {
       // Nếu endpoint search trả về mảng trực tiếp (không có thuộc tính products)
-      const productsData = Array.isArray(data) ? data : (data.products || []);
-      
+      const productsData = Array.isArray(data) ? data : data.products || [];
+
       // Ép kiểu price trong products
       products = productsData.map((product) => ({
         ...product,
         price: parseInt(product.price), // Ép kiểu price thành số
       }));
-      
+
       // Nếu có từ khóa tìm kiếm, lọc sản phẩm theo từ khóa
       if (searchKeyword) {
         const keyword = searchKeyword.toLowerCase();
-        products = products.filter(product => {
+        products = products.filter((product) => {
           return (
-            product.bookTitle && product.bookTitle.toLowerCase().includes(keyword) ||
-            product.author && product.author.toLowerCase().includes(keyword) ||
-            product.description && product.description.toLowerCase().includes(keyword) ||
-            product.catalog && product.catalog.toLowerCase().includes(keyword)
+            (product.bookTitle &&
+              product.bookTitle.toLowerCase().includes(keyword)) ||
+            (product.author &&
+              product.author.toLowerCase().includes(keyword)) ||
+            (product.description &&
+              product.description.toLowerCase().includes(keyword)) ||
+            (product.catalog && product.catalog.toLowerCase().includes(keyword))
           );
         });
       }
-      
+
       filteredProducts = [...products];
       renderProducts(products);
 
       document
-        .querySelector(".apply-button")
-        .addEventListener("click", applyFilters);
+        .querySelector('.apply-button')
+        .addEventListener('click', applyFilters);
       document
-        .getElementById("sort-select")
-        .addEventListener("change", applySort);
-        
+        .getElementById('sort-select')
+        .addEventListener('change', applySort);
+
       // Hiển thị số lượng kết quả tìm kiếm nếu có từ khóa
       if (searchKeyword && products.length > 0) {
         const countSpan = document.createElement('span');
         countSpan.className = 'search-count';
         countSpan.textContent = `Tìm thấy ${products.length} sản phẩm cho "${searchKeyword}"`;
-        document.querySelector('.sort-wrapper').insertAdjacentElement('beforebegin', countSpan);
+        document
+          .querySelector('.sort-wrapper')
+          .insertAdjacentElement('beforebegin', countSpan);
       }
     })
     .catch((err) => {
-      console.error("Lỗi gọi API:", err);
-      document.getElementById("product-grid").innerHTML =
+      console.error('Lỗi gọi API:', err);
+      document.getElementById('product-grid').innerHTML =
         '<p class="no-product">Không thể tải danh sách sản phẩm.</p>';
     });
 });

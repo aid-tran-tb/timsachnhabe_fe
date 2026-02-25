@@ -1,4 +1,4 @@
-const API_BASE_URL = 'https://tiemsachnhaem-be-mu.vercel.app/api';
+const API_BASE_URL = 'https://timsachnhabe-be.vercel.app//api';
 
 const orderAPI = {
   createOrder: async (data) => {
@@ -12,7 +12,6 @@ const orderAPI = {
       paymentMethod: data.paymentMethod,
       shippingAddress: data.shippingAddress,
     };
-    
 
     const response = await fetch(`${API_BASE_URL}/orders`, {
       method: 'POST',

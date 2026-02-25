@@ -193,7 +193,7 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
     // Lấy sản phẩm, sắp xếp theo soldCount, và hiển thị top 10
-    fetch('https://tiemsachnhaem-be-mu.vercel.app/api/products?page=1&limit=50') // Lấy nhiều hơn 10 để đảm bảo
+    fetch('https://timsachnhabe-be.vercel.app//api/products?page=1&limit=50') // Lấy nhiều hơn 10 để đảm bảo
       .then((res) => res.json())
       .then((data) => {
         const products = data.products || [];
