@@ -10,7 +10,7 @@ document.addEventListener('DOMContentLoaded', () => {
 // ==========================
 function loadStatisticsAndOrders(data) {
   // Tạo URL với các tham số filter
-  let url = `https://timsachnhabe-be.vercel.app//api/orders/statistics`;
+  let url = `https://timsachnhabe-be.vercel.app/api/orders/statistics`;
 
   // Thêm các tham số query nếu có
   const params = new URLSearchParams();
@@ -55,7 +55,7 @@ async function loadTopSellingProducts() {
 
   try {
     const response = await fetch(
-      'https://timsachnhabe-be.vercel.app//api/products/top-selling?limit=4'
+      'https://timsachnhabe-be.vercel.app/api/products/top-selling?limit=4'
     );
     if (!response.ok) throw new Error('Lỗi khi lấy sản phẩm bán chạy');
 

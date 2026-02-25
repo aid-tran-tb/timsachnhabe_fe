@@ -9,7 +9,7 @@ let ordersData = []; // Biến toàn cục để lưu dữ liệu từ API
 async function fetchOrders() {
   try {
     const response = await fetch(
-      'https://timsachnhabe-be.vercel.app//api/orders',
+      'https://timsachnhabe-be.vercel.app/api/orders',
       {
         method: 'GET',
         headers: {
@@ -149,7 +149,7 @@ async function showOrderDetail(orderId) {
 
     // Gọi API GET /orders/{id}
     const response = await fetch(
-      `https://timsachnhabe-be.vercel.app//api/orders/${orderId}`,
+      `https://timsachnhabe-be.vercel.app/api/orders/${orderId}`,
       {
         method: 'GET',
         headers: {
@@ -373,7 +373,7 @@ async function updateOrderStatus() {
 
     // Trước tiên, lấy thông tin chi tiết đơn hàng hiện tại từ API
     // const getResponse = await fetch(
-    //   `https://timsachnhabe-be.vercel.app//api/orders/${orderId}`,
+    //   `https://timsachnhabe-be.vercel.app/api/orders/${orderId}`,
     //   {
     //     method: "GET",
     //     headers: {
@@ -416,7 +416,7 @@ async function updateOrderStatus() {
 
     // Gọi API PUT /orders/{id}
     const response = await fetch(
-      `https://timsachnhabe-be.vercel.app//api/orders/${orderId}`,
+      `https://timsachnhabe-be.vercel.app/api/orders/${orderId}`,
       {
         method: 'PUT',
         headers: {

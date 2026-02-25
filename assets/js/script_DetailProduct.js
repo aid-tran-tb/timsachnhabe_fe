@@ -61,7 +61,7 @@ document.addEventListener('DOMContentLoaded', async function () {
   try {
     // Lấy dữ liệu sản phẩm từ API
     const productRes = await fetch(
-      `https://timsachnhabe-be.vercel.app//api/products/${id}`
+      `https://timsachnhabe-be.vercel.app/api/products/${id}`
     );
     if (!productRes.ok) throw new Error('Không tìm thấy sản phẩm');
     const productData = await productRes.json();
@@ -209,7 +209,7 @@ document.addEventListener('DOMContentLoaded', async function () {
 async function loadRelatedBooks(catalog, currentId) {
   try {
     const res = await fetch(
-      `https://timsachnhabe-be.vercel.app//api/products/catalog/${encodeURIComponent(
+      `https://timsachnhabe-be.vercel.app/api/products/catalog/${encodeURIComponent(
         catalog
       )}?limit=10`
     );
@@ -324,7 +324,7 @@ async function loadRelatedBooks(catalog, currentId) {
 async function loadTopSellingBooks() {
   try {
     const res = await fetch(
-      `https://timsachnhabe-be.vercel.app//api/products/top-selling?limit=10`
+      `https://timsachnhabe-be.vercel.app/api/products/top-selling?limit=10`
     );
     const books = await res.json();
 

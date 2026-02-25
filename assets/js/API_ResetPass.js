@@ -54,7 +54,7 @@ function callResetPassAPI(event) {
 
   console.log('Đang gửi yêu cầu đặt lại mật khẩu cho email:', resetEmail);
 
-  fetch('https://timsachnhabe-be.vercel.app//api/auth/reset-password', {
+  fetch('https://timsachnhabe-be.vercel.app/api/auth/reset-password', {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',

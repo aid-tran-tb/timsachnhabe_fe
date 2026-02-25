@@ -1,5 +1,5 @@
 // apiQLSP.js
-const API_BASE_URL = 'https://timsachnhabe-be.vercel.app//api';
+const API_BASE_URL = 'https://timsachnhabe-be.vercel.app/api';
 
 // Lấy danh sách tất cả sản phẩm
 async function getAllProducts(page = 1, limit = 20) {

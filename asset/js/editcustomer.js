@@ -75,7 +75,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
         // Gọi API cập nhật thông tin
         const response = await fetch(
-          `https://timsachnhabe-be.vercel.app//api/users/${userId}`,
+          `https://timsachnhabe-be.vercel.app/api/users/${userId}`,
           {
             method: 'PUT',
             headers: {

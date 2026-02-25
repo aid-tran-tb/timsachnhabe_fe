@@ -376,7 +376,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
   // Gọi API khi load trang
   let apiUrl =
-    'https://timsachnhabe-be.vercel.app//api/products?page=1&limit=50';
+    'https://timsachnhabe-be.vercel.app/api/products?page=1&limit=50';
 
   // Tải tất cả sản phẩm và sau đó lọc theo từ khóa nếu có
   fetch(apiUrl)

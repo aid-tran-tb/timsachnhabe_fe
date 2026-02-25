@@ -57,7 +57,7 @@ function callLoginAPI(event) {
   console.log('Đang gửi yêu cầu đăng nhập:', { email });
 
   // Gọi API đăng nhập
-  fetch('https://timsachnhabe-be.vercel.app//api/auth/login', {
+  fetch('https://timsachnhabe-be.vercel.app/api/auth/login', {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',

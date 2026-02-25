@@ -6,7 +6,7 @@ let currentRow = null;
 async function fetchCustomers() {
   try {
     const response = await fetch(
-      'https://timsachnhabe-be.vercel.app//api/users'
+      'https://timsachnhabe-be.vercel.app/api/users'
     );
     if (!response.ok) throw new Error('Lỗi khi gọi API danh sách');
     customers = await response.json();
@@ -22,7 +22,7 @@ async function fetchCustomers() {
 async function updateUserStatus(id, status) {
   try {
     const response = await fetch(
-      `https://timsachnhabe-be.vercel.app//api/users/${id}`,
+      `https://timsachnhabe-be.vercel.app/api/users/${id}`,
       {
         method: 'PUT',
         headers: { 'Content-Type': 'application/json' },
@@ -105,7 +105,7 @@ async function showPopup(row) {
   const customerId = row.getAttribute('data-id');
   try {
     const response = await fetch(
-      `https://timsachnhabe-be.vercel.app//api/users/${customerId}`
+      `https://timsachnhabe-be.vercel.app/api/users/${customerId}`
     );
     if (!response.ok) throw new Error('Lỗi khi gọi API chi tiết');
     const customer = await response.json();

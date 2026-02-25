@@ -35,7 +35,7 @@ function callRegisterAPI(event) {
 
   console.log('Attempting to register user:', { fullName, email, password });
 
-  fetch('https://timsachnhabe-be.vercel.app//api/auth/register', {
+  fetch('https://timsachnhabe-be.vercel.app/api/auth/register', {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',

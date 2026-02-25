@@ -44,7 +44,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
     try {
       const response = await fetch(
-        'https://timsachnhabe-be.vercel.app//api/auth/reset-password',
+        'https://timsachnhabe-be.vercel.app/api/auth/reset-password',
         {
           method: 'POST',
           headers: {

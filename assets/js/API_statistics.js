@@ -25,7 +25,7 @@ fetch('../components/sidebar.html')
 async function loadOrderStatusStatistics() {
   try {
     const response = await fetch(
-      'https://timsachnhabe-be.vercel.app//api/orders/statistics'
+      'https://timsachnhabe-be.vercel.app/api/orders/statistics'
     );
     if (!response.ok) throw new Error('Lỗi khi gọi API thống kê trạng thái');
 
@@ -66,7 +66,7 @@ async function loadOrderStatusStatistics() {
 async function loadOrderRevenueChart() {
   try {
     const response = await fetch(
-      'https://timsachnhabe-be.vercel.app//api/orders/statistics'
+      'https://timsachnhabe-be.vercel.app/api/orders/statistics'
     );
     if (!response.ok) throw new Error('Lỗi khi gọi API thống kê doanh thu');
 
@@ -209,7 +209,7 @@ async function loadTopSellingProducts() {
 
   try {
     const response = await fetch(
-      'https://timsachnhabe-be.vercel.app//api/products/top-selling?limit=4'
+      'https://timsachnhabe-be.vercel.app/api/products/top-selling?limit=4'
     );
     if (!response.ok) throw new Error('Lỗi khi lấy sản phẩm bán chạy');
 
@@ -269,7 +269,7 @@ document.addEventListener('DOMContentLoaded', () => {
 async function loadOrderStatusStatistics() {
   try {
     const response = await fetch(
-      'https://timsachnhabe-be.vercel.app//api/orders'
+      'https://timsachnhabe-be.vercel.app/api/orders'
     );
     if (!response.ok) throw new Error('Lỗi khi gọi API thống kê trạng thái');
 

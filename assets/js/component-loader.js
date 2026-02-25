@@ -103,7 +103,7 @@ document.addEventListener('DOMContentLoaded', function () {
           // Tải tất cả sản phẩm nếu cache trống
           if (productsCache.length === 0) {
             const response = await fetch(
-              'https://timsachnhabe-be.vercel.app//api/products?limit=50'
+              'https://timsachnhabe-be.vercel.app/api/products?limit=50'
             );
             if (!response.ok) {
               throw new Error('Không thể tải danh sách sản phẩm');

@@ -31,7 +31,7 @@ function callForgotPassAPI(event) {
 
   // Gọi API quên mật khẩu
   // Use the correct endpoint and method from the API doc
-  fetch('https://timsachnhabe-be.vercel.app//api/auth/forgot-password', {
+  fetch('https://timsachnhabe-be.vercel.app/api/auth/forgot-password', {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',

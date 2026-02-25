@@ -1,4 +1,4 @@
-const API_BASE_URL = 'https://timsachnhabe-be.vercel.app//api';
+const API_BASE_URL = 'https://timsachnhabe-be.vercel.app/api';
 
 const orderAPI = {
   createOrder: async (data) => {

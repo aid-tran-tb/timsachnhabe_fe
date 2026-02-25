@@ -68,7 +68,7 @@ function callResetPassAPI(event) {
 
   // --- Gọi API đặt lại mật khẩu ---
   // Use the assumed correct endpoint and method
-  fetch('https://timsachnhabe-be.vercel.app//api/auth/reset-password', {
+  fetch('https://timsachnhabe-be.vercel.app/api/auth/reset-password', {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
